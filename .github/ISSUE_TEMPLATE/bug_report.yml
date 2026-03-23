@@ -1,0 +1,72 @@
+name: "\U0001f41b Bug Report"
+description: Something isn't working as expected
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a bug!
+
+  - type: input
+    id: url
+    attributes:
+      label: URL / Username
+      description: What URL or GitHub username shows the problem?
+      placeholder: "e.g. devwrapped.com/torvalds"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly.
+      placeholder: "The heatmap shows all days as empty even though I have contributions..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: "The heatmap should show my contribution data..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to devwrapped.com/myusername
+        2. See empty heatmap
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: false
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / OS
+      placeholder: "e.g. iPhone 15 / iOS 17, MacBook / macOS 14"
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots / Additional context
+      description: Paste screenshots or any console errors here.
+    validations:
+      required: false

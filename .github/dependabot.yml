@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      next-ecosystem:
+        patterns:
+          - "next"
+          - "react"
+          - "react-dom"
+          - "@types/react*"
+      radix-ui:
+        patterns:
+          - "@radix-ui/*"
+    ignore:
+      # Only auto-update patches and minor; major versions need manual review
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]

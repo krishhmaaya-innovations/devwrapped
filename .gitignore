@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +40,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# test output files
+test-output*.txt
+test-results*.txt
+pw-out.txt
+pw-results.txt
+final-test.txt
+*.log
+
+# playwright artifacts
+test-results/
+blob-report/
+playwright-report/
+tests/report/
+tests/e2e-report/
+
+# editor
+.vscode/

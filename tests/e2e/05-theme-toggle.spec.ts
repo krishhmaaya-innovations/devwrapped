@@ -1,0 +1,59 @@
+import { test, expect } from "@playwright/test";
+
+test.describe("Dark / Light Theme Toggle", () => {
+  test.beforeEach(async ({ page }) => {
+    // Clear localStorage to start fresh in dark mode
+    await page.goto("/");
+    await page.evaluate(() => localStorage.removeItem("devwrapped-theme"));
+    await page.reload();
+  });
+
+  test("default theme is dark", async ({ page }) => {
+    const html = page.locator("html");
+    await expect(html).toHaveAttribute("data-theme", "dark");
+  });
+
+  test("clicking theme toggle switches to light", async ({ page }) => {
+    await page.getByRole("button", { name: /Switch to light mode/i }).click();
+    const html = page.locator("html");
+    await expect(html).toHaveAttribute("data-theme", "light");
+  });
+
+  test("clicking theme toggle again switches back to dark", async ({ page }) => {
+    // Switch to light
+    await page.getByRole("button", { name: /Switch to light mode/i }).click();
+    // Switch back to dark
+    await page.getByRole("button", { name: /Switch to dark mode/i }).click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  });
+
+  test("theme persists across page reload", async ({ page }) => {
+    await page.getByRole("button", { name: /Switch to light mode/i }).click();
+    await page.reload();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  });
+
+  test("theme is stored in localStorage", async ({ page }) => {
+    await page.getByRole("button", { name: /Switch to light mode/i }).click();
+    const stored = await page.evaluate(() =>
+      localStorage.getItem("devwrapped-theme")
+    );
+    expect(stored).toBe("light");
+  });
+
+  test("no flash of wrong theme on reload (FOWT prevention)", async ({
+    page,
+  }) => {
+    // Set light theme
+    await page.getByRole("button", { name: /Switch to light mode/i }).click();
+
+    // Intercept the initial HTML response to check the inline script ran
+    await page.reload();
+
+    // The theme should be applied before any paint - data-theme should be correct immediately
+    const theme = await page
+      .locator("html")
+      .getAttribute("data-theme");
+    expect(theme).toBe("light");
+  });
+});

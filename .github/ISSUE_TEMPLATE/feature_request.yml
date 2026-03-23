@@ -1,0 +1,48 @@
+name: "\U0001f4a1 Feature Request"
+description: Suggest a new feature or improvement
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Got an idea? We'd love to hear it!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      placeholder: "I always have to manually compare two profiles by opening two tabs..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      placeholder: "Add a side-by-side comparison view..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: "I considered just using the Battle page but it doesn't show..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature area
+      options:
+        - Profile page
+        - Battle / Comparison
+        - Heatmap / Themes
+        - Stats cards
+        - Export / Share
+        - API
+        - SEO / Performance
+        - Accessibility
+        - Other
+    validations:
+      required: false

@@ -1,0 +1,38 @@
+language: "en-US"
+tone_instructions: "Be concise and direct. Focus on functionality, security, and performance issues. Skip minor style nitpicks that ESLint already covers."
+early_access: false
+
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: true
+
+  path_filters:
+    - "!tests/report/**"
+    - "!.next/**"
+    - "!node_modules/**"
+    - "!*.lock"
+
+  path_instructions:
+    - path: "app/api/**"
+      instructions: "Check for: missing rate limiting, unhandled errors, missing input validation, proper HTTP status codes, cache headers."
+    - path: "lib/github.ts"
+      instructions: "Check GitHub API usage: correct GraphQL queries, proper error handling, rate limit awareness, token rotation logic."
+    - path: "tests/e2e/**"
+      instructions: "Check for: flaky selectors, missing assertions, test isolation. Suggest adding tests for any new features not covered."
+    - path: "components/**"
+      instructions: "Check for: missing aria labels, keyboard navigation, React Compiler compatibility (no setState in useEffect body)."
+
+  auto_review:
+    enabled: true
+    ignore_title_keywords:
+      - "WIP"
+      - "draft"
+      - "DO NOT MERGE"
+    drafts: false
+
+chat:
+  auto_reply: true
