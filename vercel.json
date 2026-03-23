@@ -1,0 +1,34 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "regions": ["iad1"],
+  "headers": [
+    {
+      "source": "/api/embed/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, s-maxage=21600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/api/og",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/api/og/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=21600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/api/github",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=7200" }
+      ]
+    }
+  ]
+}
