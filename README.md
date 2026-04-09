@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <a href="https://devwrapped.com">Live Site</a> ·
-  <a href="https://devwrapped.com/battle">Dev Battle</a> ·
+  <a href="https://devwrapped.kminnovations.dev">Live Site</a> ·
+  <a href="https://devwrapped.kminnovations.dev/battle">Dev Battle</a> ·
   <a href="CONTRIBUTING.md">Contributing</a> ·
   <a href="TESTING.md">Testing</a> ·
-  <a href="https://devwrapped.com/privacy">Privacy</a>
+  <a href="https://devwrapped.kminnovations.dev/privacy">Privacy</a>
 </p>
 
 <p align="center">
@@ -80,14 +80,14 @@ Open [http://localhost:4000](http://localhost:4000)
 | `GITHUB_TOKEN_3` | No | Extra PAT for rate limit rotation |
 | `UPSTASH_REDIS_REST_URL` | No | Upstash Redis URL (falls back to memory cache) |
 | `UPSTASH_REDIS_REST_TOKEN` | No | Upstash Redis token |
-| `NEXT_PUBLIC_SITE_URL` | No | Production URL for OG images (default: `https://devwrapped.com`) |
+| `NEXT_PUBLIC_SITE_URL` | No | Production URL for OG images (default: `https://devwrapped.kminnovations.dev`) |
 
 ## README Embed
 
 Add your DevWrapped stats to your GitHub profile:
 
 ```markdown
-[![DevWrapped](https://devwrapped.com/api/embed/YOUR_USERNAME)](https://devwrapped.com/YOUR_USERNAME)
+[![DevWrapped](https://devwrapped.kminnovations.dev/api/embed/YOUR_USERNAME)](https://devwrapped.kminnovations.dev/YOUR_USERNAME)
 ```
 
 Customize with query params:
