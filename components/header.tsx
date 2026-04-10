@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Coffee, Swords } from "lucide-react";
+import { Github, Swords } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -41,22 +41,7 @@ export function Header() {
             </a>
           </Button>
 
-          <Button
-            variant="outline"
-            size="sm"
-            asChild
-            className="border-amber-500/50 text-amber-500 hover:bg-amber-500/10 hover:border-amber-500"
-          >
-            <a
-              href="https://buymeacoffee.com/krishhmaaya"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gap-1.5"
-            >
-              <Coffee className="h-4 w-4" />
-              <span className="hidden sm:inline">Buy me a coffee</span>
-            </a>
-          </Button>
+
         </nav>
       </div>
     </header>
