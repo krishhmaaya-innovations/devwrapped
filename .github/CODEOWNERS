@@ -1,17 +1,8 @@
 # CODEOWNERS
-# These owners are automatically requested for review on PRs that touch their files.
-# Format: <pattern> <@owner or @team>
-# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-
-# Global — everything requires review from the maintainer
-* @krishhmaaya-innovations
-
-# Security-sensitive files — require explicit approval
-.env.example @krishhmaaya-innovations
-lib/rate-limit.ts @krishhmaaya-innovations
-lib/github.ts @krishhmaaya-innovations
-app/api/ @krishhmaaya-innovations
-
-# CI/CD — changes need maintainer sign-off
-.github/ @krishhmaaya-innovations
-vercel.json @krishhmaaya-innovations
+# Auto-review requests disabled for solo repo.
+# Re-enable and assign reviewers when collaborators are added.
+#
+# Example (uncomment when team grows):
+# * @krishhmaaya-innovations
+# app/api/ @krishhmaaya-innovations
+# lib/rate-limit.ts @krishhmaaya-innovations
