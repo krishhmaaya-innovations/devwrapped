@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: [["list"], ["html", { outputFolder: "tests/report", open: "never" }]],
   timeout: 30000,
   use: {
-    baseURL: "http://localhost:4000",
+    baseURL: process.env.CI ? "http://localhost:3000" : "http://localhost:4000",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure",
@@ -21,9 +21,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev -- -p 4000",
-    url: "http://localhost:4000",
-    reuseExistingServer: true,
-    timeout: 60000,
+    command: process.env.CI ? "npx next start -p 3000" : "npm run dev -- -p 4000",
+    url: process.env.CI ? "http://localhost:3000" : "http://localhost:4000",
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000,
   },
 });
