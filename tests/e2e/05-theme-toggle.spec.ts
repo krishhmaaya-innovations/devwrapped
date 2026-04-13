@@ -29,6 +29,8 @@ test.describe("Dark / Light Theme Toggle", () => {
 
   test("theme persists across page reload", async ({ page }) => {
     await page.getByRole("button", { name: /Switch to light mode/i }).click();
+    // Wait for localStorage to be written before reloading
+    await page.waitForFunction(() => localStorage.getItem("devwrapped-theme") === "light");
     await page.reload();
     await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   });
@@ -44,16 +46,15 @@ test.describe("Dark / Light Theme Toggle", () => {
   test("no flash of wrong theme on reload (FOWT prevention)", async ({
     page,
   }) => {
-    // Set light theme
+    // Set light theme and wait for it to be stored
     await page.getByRole("button", { name: /Switch to light mode/i }).click();
+    await page.waitForFunction(() => localStorage.getItem("devwrapped-theme") === "light");
 
-    // Intercept the initial HTML response to check the inline script ran
+    // Reload — inline script should apply theme before paint
     await page.reload();
 
-    // The theme should be applied before any paint - data-theme should be correct immediately
-    const theme = await page
-      .locator("html")
-      .getAttribute("data-theme");
+    // Theme should be correct immediately after load
+    const theme = await page.locator("html").getAttribute("data-theme");
     expect(theme).toBe("light");
   });
 });
