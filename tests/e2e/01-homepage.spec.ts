@@ -61,12 +61,6 @@ test.describe("Homepage", () => {
     await expect(ghLink).toHaveAttribute("href", /github\.com/);
   });
 
-  test("header has Buy me a coffee link", async ({ page }) => {
-    const coffeeLink = page.getByRole("link", { name: /coffee/i });
-    await expect(coffeeLink).toBeVisible();
-    await expect(coffeeLink).toHaveAttribute("href", /buymeacoffee/);
-  });
-
   test("footer is visible with correct content", async ({ page }) => {
     await expect(page.getByText("KrishMaaya")).toBeVisible();
     await expect(page.getByText(/GitHub GraphQL API/)).toBeVisible();

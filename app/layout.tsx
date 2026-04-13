@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ThemeSyncer } from "@/components/theme-syncer";
 import { Toaster } from "sonner";
 
 const inter = Inter({
@@ -119,6 +120,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
+        <ThemeSyncer />
         <Toaster position="top-center" richColors />
         <Header />
         <main className="flex-1">{children}</main>
