@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://devwrapped.com"),
+  metadataBase: new URL("https://devwrapped.kminnovations.dev"),
   title: {
     default: "DevWrapped — Your GitHub Year, Beautifully Visualized",
     template: "%s — DevWrapped",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://devwrapped.com",
+    url: "https://devwrapped.kminnovations.dev",
     siteName: "DevWrapped",
     title: "DevWrapped — Your GitHub Year, Beautifully Visualized",
     description:
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     images: ["/api/og"],
   },
   alternates: {
-    canonical: "https://devwrapped.com",
+    canonical: "https://devwrapped.kminnovations.dev",
   },
   robots: {
     index: true,
@@ -102,7 +102,7 @@ export default function RootLayout({
               name: "DevWrapped",
               description:
                 "Turn your GitHub contributions into a beautiful, shareable visual.",
-              url: "https://devwrapped.com",
+              url: "https://devwrapped.kminnovations.dev",
               applicationCategory: "DeveloperApplication",
               operatingSystem: "Web",
               offers: {

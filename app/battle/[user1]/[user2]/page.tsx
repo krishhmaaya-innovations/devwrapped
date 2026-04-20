@@ -14,12 +14,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://devwrapped.com/battle/${user1}/${user2}`,
+      canonical: `https://devwrapped.kminnovations.dev/battle/${user1}/${user2}`,
     },
     openGraph: {
       title: `${title} — DevWrapped`,
       description,
-      url: `https://devwrapped.com/battle/${user1}/${user2}`,
+      url: `https://devwrapped.kminnovations.dev/battle/${user1}/${user2}`,
       images: [{
         url: "/api/og",
         width: 1200,

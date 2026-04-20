@@ -202,7 +202,7 @@ export function BattleClient({ user1, user2 }: BattleClientProps) {
           ``,
           `Challenge anyone 👇`,
         ].join("\n");
-    const url = `https://devwrapped.com/battle/${user1}/${user2}`;
+    const url = `https://devwrapped.kminnovations.dev/battle/${user1}/${user2}`;
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
       "_blank",

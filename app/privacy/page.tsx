@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "DevWrapped is built with your privacy in mind. No accounts, no tracking, no personal data stored.",
   alternates: {
-    canonical: "https://devwrapped.com/privacy",
+    canonical: "https://devwrapped.kminnovations.dev/privacy",
   },
 };
 

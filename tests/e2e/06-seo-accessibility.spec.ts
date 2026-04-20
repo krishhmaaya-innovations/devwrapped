@@ -124,7 +124,7 @@ test.describe("SEO & Accessibility", () => {
       const canonical = page.locator('link[rel="canonical"]');
       const href = await canonical.getAttribute("href");
       expect(href).toBeTruthy();
-      expect(href).toContain("devwrapped.com");
+      expect(href).toContain("devwrapped.kminnovations.dev");
     });
 
     test("battle page has og:image meta tag", async ({ page }) => {

@@ -96,7 +96,7 @@ export function UserProfileClient({ username }: UserProfileClientProps) {
       ``,
       `See yours 👇`,
     ].join("\n");
-    const url = `https://devwrapped.com/${username}`;
+    const url = `https://devwrapped.kminnovations.dev/${username}`;
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
       "_blank",

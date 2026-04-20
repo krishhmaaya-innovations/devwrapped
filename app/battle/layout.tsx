@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Compare two GitHub profiles head-to-head. Who has the most contributions? Longest streak? Best consistency? Find out with DevWrapped Battle.",
   alternates: {
-    canonical: "https://devwrapped.com/battle",
+    canonical: "https://devwrapped.kminnovations.dev/battle",
   },
   openGraph: {
     title: "Dev Battle — Compare GitHub Profiles — DevWrapped",
     description:
       "Compare two GitHub profiles head-to-head. Who codes more?",
-    url: "https://devwrapped.com/battle",
+    url: "https://devwrapped.kminnovations.dev/battle",
     images: [{
       url: "/api/og",
       width: 1200,

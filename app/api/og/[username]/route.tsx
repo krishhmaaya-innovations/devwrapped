@@ -118,7 +118,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
               <span style={{ fontSize: 22, fontWeight: 700, color: "#6366f1" }}>
                 &lt;/&gt; DevWrapped
               </span>
-              <span style={{ fontSize: 14, color: "#64748b" }}>devwrapped.com</span>
+              <span style={{ fontSize: 14, color: "#64748b" }}>devwrapped.kminnovations.dev</span>
             </div>
           </div>
 
@@ -221,7 +221,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           <span style={{ fontSize: 42, fontWeight: 700 }}>
             {username}&apos;s GitHub Wrapped
           </span>
-          <span style={{ fontSize: 20, color: "#64748b" }}>devwrapped.com</span>
+          <span style={{ fontSize: 20, color: "#64748b" }}>devwrapped.kminnovations.dev</span>
         </div>
       ),
       { width: 1200, height: 630 }

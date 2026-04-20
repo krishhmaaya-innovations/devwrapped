@@ -171,7 +171,7 @@ export function GET() {
             letterSpacing: "0.5px",
           }}
         >
-          devwrapped.com
+          devwrapped.kminnovations.dev
         </div>
       </div>
     ),
